@@ -106,13 +106,13 @@ GitHub
 
 Neste projeto foram praticados os seguintes conceitos:
 
-Criação de classes e objetos.
-Atributos.
-Métodos.
-Construtores.
-Encapsulamento.
-Alteração do estado de um objeto.
-Regras de negócio utilizando if.
-Validação de dados.
-Testes com valores válidos e inválidos.
-Versionamento com Git.
+- Criação de classes e objetos.
+- Atributos.
+- Métodos.
+- Construtores.
+- Encapsulamento.
+- Alteração do estado de um objeto.
+- Regras de negócio utilizando if.
+- Validação de dados.
+- Testes com valores válidos e inválidos.
+- Versionamento com Git.

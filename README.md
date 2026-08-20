@@ -1,27 +1,57 @@
-# Sistema de Passageiro
-📋 Sobre o projeto
+# 🚍 Sistema de Passageiro — POO em Java
 
-Este projeto foi desenvolvido para praticar conceitos de Programação Orientada a Objetos (POO) utilizando a linguagem Java.
+## 📋 Sobre o projeto
 
-A classe Passageiro representa um passageiro no mundo real, armazenando informações como nome, CPF e saldo disponível para realizar viagens.
+Este projeto foi desenvolvido como atividade acadêmica para praticar os principais conceitos de **Programação Orientada a Objetos (POO)** utilizando a linguagem **Java**.
 
-Além dos atributos, a classe possui métodos que permitem adicionar saldo e pagar uma viagem, garantindo que regras de negócio sejam respeitadas.
+A aplicação representa um sistema simples de gerenciamento de um passageiro. Por meio da classe `Passageiro`, é possível armazenar informações do passageiro e controlar o saldo disponível para a realização de viagens.
 
-# 👤 Classe Passageiro
+Além da criação da classe e de seus atributos, o projeto implementa métodos capazes de **alterar o estado do objeto**, seguindo regras de negócio e validações para evitar operações inválidas.
 
-A classe Passageiro possui os seguintes atributos:
+---
 
-nome: armazena o nome do passageiro.
-cpf: armazena o CPF do passageiro.
-saldo: armazena o saldo disponível para realizar viagens.
-Exemplo da classe
+## 🎯 Objetivo da atividade
+
+O objetivo principal do projeto é praticar:
+
+* Criação de classes e objetos;
+* Definição de atributos;
+* Criação e implementação de métodos;
+* Uso de construtores;
+* Encapsulamento;
+* Alteração do estado de objetos;
+* Criação de regras de negócio;
+* Validação de dados utilizando estruturas condicionais;
+* Testes com valores válidos e inválidos;
+* Versionamento do projeto utilizando Git e GitHub.
+
+A atividade também solicita a implementação de, pelo menos, **dois métodos que alterem o estado de um objeto**, requisito atendido pelos métodos:
+
+* `adicionarSaldo()`
+* `pagarViagem()`
+
+---
+
+# 👤 Classe `Passageiro`
+
+A classe `Passageiro` representa um passageiro e armazena as principais informações necessárias para realizar viagens.
+
+## 📦 Atributos
+
+| Atributo | Tipo     | Descrição                                         |
+| -------- | -------- | ------------------------------------------------- |
+| `nome`   | `String` | Armazena o nome do passageiro                     |
+| `cpf`    | `String` | Armazena o CPF do passageiro                      |
+| `saldo`  | `double` | Armazena o saldo disponível para realizar viagens |
+
+### Exemplo da estrutura da classe
+
+```java
 public class Passageiro {
-
 
     private String nome;
     private String cpf;
     private double saldo;
-
 
     public Passageiro(String nome, String cpf) {
         this.nome = nome;
@@ -29,90 +59,321 @@ public class Passageiro {
         this.saldo = 0.0;
     }
 }
-# ⚙️ Métodos
-➕ adicionarSaldo()
+```
 
-O método adicionarSaldo(double valor) permite adicionar dinheiro ao saldo do passageiro.
+Os atributos são declarados como `private`, aplicando o conceito de **encapsulamento**. Dessa forma, o estado do objeto é controlado pelos métodos da própria classe.
 
-Regra de negócio
+---
 
-O valor adicionado deve ser maior que zero.
+# ⚙️ Métodos implementados
 
-Caso seja informado um valor igual ou menor que zero, a operação não será realizada.
+## ➕ `adicionarSaldo(double valor)`
 
-Exemplo
+O método `adicionarSaldo()` é responsável por adicionar um valor ao saldo disponível do passageiro.
+
+### Regra de negócio
+
+O valor informado deve ser **maior que zero**.
+
+Caso seja informado um valor igual ou menor que zero, a operação não deve ser realizada.
+
+### Exemplo válido
+
+```java
 passageiro1.adicionarSaldo(30.0);
+```
 
-Nesse exemplo, serão adicionados R$ 30,00 ao saldo do passageiro.
+Após a execução, o saldo do passageiro será aumentado em **R$ 30,00**.
 
-Exemplo inválido
+### Exemplo inválido
+
+```java
 passageiro1.adicionarSaldo(-10.0);
+```
 
-A operação será bloqueada, pois não é permitido adicionar um valor negativo.
+A operação deve ser bloqueada, pois não é permitido adicionar valores negativos ao saldo.
 
-# 💳 pagarViagem()
+---
 
-O método pagarViagem(double valor) permite que o passageiro utilize seu saldo para pagar uma viagem.
+## 💳 `pagarViagem(double valor)`
 
-Regras de negócio
+O método `pagarViagem()` permite que o passageiro utilize o saldo disponível para pagar uma viagem.
 
-Para realizar o pagamento:
+### Regras de negócio
 
-O valor da viagem deve ser maior que zero.
-O passageiro deve possuir saldo suficiente.
+Para que o pagamento seja realizado corretamente:
 
-Essas validações impedem que o saldo fique negativo ou que sejam realizados pagamentos com valores inválidos.
+1. O valor da viagem deve ser maior que zero;
+2. O passageiro deve possuir saldo suficiente;
+3. O saldo não pode ficar negativo após o pagamento.
 
-Exemplo válido
+### Exemplo válido
+
+```java
 passageiro1.pagarViagem(20.0);
+```
 
-Se o passageiro possuir saldo suficiente, o valor será descontado.
+Se o passageiro possuir saldo suficiente, o valor da viagem será descontado do saldo disponível.
 
-Exemplo inválido
+### Exemplo inválido — valor negativo
+
+```java
+passageiro1.pagarViagem(-20.0);
+```
+
+A operação deve ser bloqueada, pois o valor da viagem não pode ser negativo.
+
+### Exemplo inválido — saldo insuficiente
+
+```java
 passageiro1.pagarViagem(100.0);
+```
 
-Caso o saldo seja menor que R$ 100,00, a operação será bloqueada.
+Caso o passageiro não possua saldo suficiente, o pagamento não será realizado.
 
-# 🧪 Testes
+---
 
-A classe foi testada utilizando valores válidos e inválidos.
+# 🔄 Alteração do estado do objeto
 
-Testes válidos
+Os métodos implementados modificam diretamente o atributo `saldo`, alterando o estado do objeto `Passageiro`.
+
+### Exemplo
+
+```java
+Passageiro passageiro1 = new Passageiro(
+    "João",
+    "123456789"
+);
+```
+
+Inicialmente, o objeto é criado com:
+
+```text
+Nome: João
+CPF: 123456789
+Saldo: R$ 0,00
+```
+
+Após adicionar saldo:
+
+```java
+passageiro1.adicionarSaldo(50.0);
+```
+
+O estado do objeto é alterado para:
+
+```text
+Saldo: R$ 50,00
+```
+
+Após pagar uma viagem:
+
+```java
+passageiro1.pagarViagem(20.0);
+```
+
+O estado é alterado novamente:
+
+```text
+Saldo: R$ 30,00
+```
+
+Isso demonstra que os métodos `adicionarSaldo()` e `pagarViagem()` atendem ao requisito da atividade de **alterar o estado de pelo menos um atributo do objeto**.
+
+---
+
+# 🧪 Testes realizados
+
+Foram realizados testes com valores válidos e inválidos para verificar o funcionamento das regras de negócio.
+
+## ✅ Testes válidos
+
+```java
 Passageiro passageiro1 = new Passageiro(
     "João",
     "123456789"
 );
 
-
 passageiro1.adicionarSaldo(30.0);
 passageiro1.pagarViagem(20.0);
-Testes inválidos
+```
+
+### Resultado esperado
+
+```text
+Saldo inicial: R$ 0,00
+Saldo após adicionar: R$ 30,00
+Saldo após pagar a viagem: R$ 10,00
+```
+
+---
+
+## ❌ Testes inválidos
+
+### Adicionar valor negativo
+
+```java
 passageiro1.adicionarSaldo(-10.0);
+```
+
+### Adicionar valor igual a zero
+
+```java
 passageiro1.adicionarSaldo(0);
+```
 
+### Pagar viagem com valor negativo
 
+```java
 passageiro1.pagarViagem(-20.0);
-passageiro1.pagarViagem(100.0);
+```
 
-Esses testes verificam se as regras de negócio estão funcionando corretamente e impedem que o objeto Passageiro fique em um estado inconsistente.
+### Pagar viagem sem saldo suficiente
+
+```java
+passageiro1.pagarViagem(100.0);
+```
+
+Esses testes garantem que o objeto `Passageiro` não entre em um estado inconsistente, evitando, por exemplo, valores inválidos ou saldo negativo.
+
+---
+
+# 🧠 Conceitos de POO praticados
+
+Neste projeto foram utilizados os seguintes conceitos de **Programação Orientada a Objetos**:
+
+### 🔹 Classes
+
+A classe `Passageiro` funciona como um modelo para representar passageiros.
+
+### 🔹 Objetos
+
+Objetos são criados a partir da classe `Passageiro`.
+
+Exemplo:
+
+```java
+Passageiro passageiro1 = new Passageiro(
+    "João",
+    "123456789"
+);
+```
+
+### 🔹 Atributos
+
+Representam as características e o estado do objeto:
+
+```java
+private String nome;
+private String cpf;
+private double saldo;
+```
+
+### 🔹 Métodos
+
+Representam os comportamentos do objeto:
+
+```java
+adicionarSaldo()
+pagarViagem()
+```
+
+### 🔹 Encapsulamento
+
+Os atributos são protegidos com `private`, permitindo que alterações sejam realizadas de forma controlada por meio dos métodos da classe.
+
+### 🔹 Construtor
+
+O construtor é utilizado para inicializar o objeto `Passageiro` com nome e CPF.
+
+### 🔹 Alteração de estado
+
+Os métodos implementados alteram o valor do atributo `saldo`, modificando o estado do objeto.
+
+### 🔹 Regras de negócio
+
+As estruturas condicionais garantem que operações inválidas não sejam realizadas.
+
+---
+
+# 🗂️ Estrutura do projeto
+
+```text
+atividade-poo-metodos-comportamentos/
+│
+├── src/
+│   ├── Passageiro.java
+│   └── Main.java
+│
+├── .gitignore
+├── README.md
+└── POO_19_08.iml
+```
+
+---
 
 # 💻 Tecnologias utilizadas
-Java
-Programação Orientada a Objetos (POO)
-Git
-GitHub
 
-# 📚 Conceitos praticados
+* ☕ Java
+* 🧠 Programação Orientada a Objetos (POO)
+* 📝 IntelliJ IDEA
+* 🌿 Git
+* 🐙 GitHub
 
-Neste projeto foram praticados os seguintes conceitos:
+---
 
-- Criação de classes e objetos.
-- Atributos.
-- Métodos.
-- Construtores.
-- Encapsulamento.
-- Alteração do estado de um objeto.
-- Regras de negócio utilizando if.
-- Validação de dados.
-- Testes com valores válidos e inválidos.
-- Versionamento com Git.
+# ▶️ Como executar o projeto
+
+## Pré-requisitos
+
+Para executar o projeto, é necessário possuir:
+
+* Java instalado na máquina;
+* Uma IDE compatível com Java, como o IntelliJ IDEA.
+
+## Passo a passo
+
+1. Clone o repositório:
+
+```bash
+git clone <URL_DO_REPOSITORIO>
+```
+
+2. Abra o projeto na sua IDE;
+
+3. Localize a classe principal do projeto;
+
+4. Execute o método `main()`.
+
+---
+
+# 📚 Aprendizados
+
+Com o desenvolvimento desta atividade, foi possível praticar como métodos podem representar comportamentos de objetos e como eles podem modificar o estado de seus atributos.
+
+O projeto também demonstra a importância da validação de dados e das regras de negócio para evitar situações inconsistentes, como:
+
+* Adicionar valores negativos ao saldo;
+* Realizar pagamentos com valores inválidos;
+* Permitir que o saldo fique negativo;
+* Efetuar pagamentos sem saldo suficiente.
+
+---
+
+# 👨‍💻 Autor
+
+**João Dyonisio**
+
+Estudante de **Ciência da Computação** e desenvolvedor em formação.
+
+🐙 GitHub: [Joao-Dyonisio](https://github.com/Joao-Dyonisio)
+
+---
+
+# 📄 Licença
+
+Este projeto foi desenvolvido para fins acadêmicos e educacionais.
+
+---
+
+⭐ Se este projeto foi útil para você, considere deixar uma estrela no repositório!

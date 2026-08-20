@@ -286,10 +286,6 @@ Os atributos são protegidos com `private`, permitindo que alterações sejam re
 
 O construtor é utilizado para inicializar o objeto `Passageiro` com nome e CPF.
 
-### 🔹 Alteração de estado
-
-Os métodos implementados alteram o valor do atributo `saldo`, modificando o estado do objeto.
-
 ### 🔹 Regras de negócio
 
 As estruturas condicionais garantem que operações inválidas não sejam realizadas.

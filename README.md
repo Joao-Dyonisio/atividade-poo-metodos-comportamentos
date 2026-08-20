@@ -1,4 +1,4 @@
-Sistema de Passageiro
+# Sistema de Passageiro
 📋 Sobre o projeto
 
 Este projeto foi desenvolvido para praticar conceitos de Programação Orientada a Objetos (POO) utilizando a linguagem Java.
@@ -7,7 +7,7 @@ A classe Passageiro representa um passageiro no mundo real, armazenando informa�
 
 Além dos atributos, a classe possui métodos que permitem adicionar saldo e pagar uma viagem, garantindo que regras de negócio sejam respeitadas.
 
-👤 Classe Passageiro
+# 👤 Classe Passageiro
 
 A classe Passageiro possui os seguintes atributos:
 
@@ -29,7 +29,7 @@ public class Passageiro {
         this.saldo = 0.0;
     }
 }
-⚙️ Métodos
+# ⚙️ Métodos
 ➕ adicionarSaldo()
 
 O método adicionarSaldo(double valor) permite adicionar dinheiro ao saldo do passageiro.
@@ -50,7 +50,7 @@ passageiro1.adicionarSaldo(-10.0);
 
 A operação será bloqueada, pois não é permitido adicionar um valor negativo.
 
-💳 pagarViagem()
+# 💳 pagarViagem()
 
 O método pagarViagem(double valor) permite que o passageiro utilize seu saldo para pagar uma viagem.
 
@@ -73,7 +73,7 @@ passageiro1.pagarViagem(100.0);
 
 Caso o saldo seja menor que R$ 100,00, a operação será bloqueada.
 
-🧪 Testes
+# 🧪 Testes
 
 A classe foi testada utilizando valores válidos e inválidos.
 
@@ -96,12 +96,13 @@ passageiro1.pagarViagem(100.0);
 
 Esses testes verificam se as regras de negócio estão funcionando corretamente e impedem que o objeto Passageiro fique em um estado inconsistente.
 
-💻 Tecnologias utilizadas
+# 💻 Tecnologias utilizadas
 Java
 Programação Orientada a Objetos (POO)
 Git
 GitHub
-📚 Conceitos praticados
+
+# 📚 Conceitos praticados
 
 Neste projeto foram praticados os seguintes conceitos:
 
